@@ -7,19 +7,20 @@ int main()
 
 	int **mat, l, c, x, y;
 
-	//Recebendo o numero de linhas e colunas
+	// Recebendo o numero de linhas e colunas
 	printf("Qual a quantidade de linhas e colunas da matriz, respectivamente? ");
 	scanf("%d%d", &l, &c);
 
-	// alocando as linhas da matriz(ponteiros coluna)
+	// Alocando as linhas da matriz(ponteiros coluna)
 	mat = (int **) malloc(l * sizeof(int *));
-	//alocando as colunas
+	
+	// Alocando as colunas
 	for (x = 0; x < l; x++)
 	{
 		mat[x] = (int *) malloc(c * sizeof(int));
 	}
 
-	//recebendo os valores da matriz
+	// Recebendo os valores da matriz
 	for (x = 0; x < l; x++)
 	{
 		for (y = 0; y < c; y++)
@@ -41,7 +42,7 @@ int main()
 		printf("\n");
 	}
 
-	//imprimindo a matriz transposta
+	// Imprimindo a matriz transposta
 	printf("\n\n Matriz Transposta\n\n");
 
 	for (y = 0; y < c; y++)
@@ -53,17 +54,16 @@ int main()
 		printf("\n");
 	}
 
-	//liberando as colunas de cada linha
+	// Liberando as colunas de cada linha
 	for (x = 0; x < l; x++)
 	{
 		free(mat[x]);
 	}
 
-	//liberando todas as linhas
-	free(mat);
-	mat = NULL; // limpando a matriz
+	free(mat); // Liberando todas as linhas
+	mat = NULL; // Limpando a matriz
 
-	scanf("%c", &con);//limpando o buffer
+	scanf("%c", &con);// Limpando o buffer
 	scanf("%c", &con);
 	return 0;
 }
